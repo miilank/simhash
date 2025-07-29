@@ -9,7 +9,7 @@ A small Go project that computes **SimHash** fingerprints for two text files and
 **SimHash** is a locality-sensitive hashing (LSH) technique for turning a document into a fixed-length bit fingerprint such that **similar documents produce similar fingerprints**.  
 Closeness is measured by **Hamming distance** (the number of differing bits). Lower distance ⇒ more similar.
 
-High-level idea:
+Idea:
 
 1. Extract features from the text (e.g., words).
 2. Hash each feature to a fixed-length bit string.
@@ -39,5 +39,5 @@ Pipeline for each file:
 ## Notes
 
 - Uses MD5 (128 bits); can be replaced with SHA-256
-- Only term frequencies used (no TF-IDF)
+- Words are weighted only by how many times they appear in the text. No advanced weighting like TF-IDF is used.
 - Basic stop-word list in English
